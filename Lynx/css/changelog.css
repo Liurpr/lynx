@@ -1,0 +1,459 @@
+/* Estilos específicos para la página de changelog */
+.changelog-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.changelog-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.changelog-stats {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+}
+
+.stat-card {
+    background: var(--color-fondo-elevado);
+    border-radius: 12px;
+    padding: 1.5rem;
+    min-width: 180px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-primario);
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    color: var(--color-texto);
+    font-size: 0.9rem;
+}
+
+.version-navigation {
+    background: var(--color-fondo-elevado);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.version-nav-title {
+    margin-bottom: 1.5rem;
+    color: var(--color-primario);
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+}
+
+.version-nav-title i {
+    margin-right: 0.5rem;
+}
+
+.version-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+}
+
+.version-link {
+    background: var(--color-fondo);
+    color: var(--color-texto);
+    border: 1px solid var(--color-borde);
+    border-radius: 6px;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+
+.version-link:hover {
+    background: var(--color-primario);
+    color: white;
+    border-color: var(--color-primario);
+}
+
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+}
+
+.filter-button {
+    background: var(--color-fondo);
+    color: var(--color-texto);
+    border: 1px solid var(--color-borde);
+    border-radius: 20px;
+    padding: 0.4rem 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+}
+
+.filter-button i {
+    margin-right: 0.4rem;
+}
+
+.filter-button.active {
+    background: var(--color-primario);
+    color: white;
+    border-color: var(--color-primario);
+}
+
+.filter-button:hover:not(.active) {
+    background: var(--color-fondo-elevado);
+}
+
+.changelog-timeline {
+    position: relative;
+}
+
+.changelog-timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 18px;
+    width: 2px;
+    background: linear-gradient(180deg, 
+        var(--color-primario) 0%, 
+        var(--color-secundario) 100%);
+    z-index: 0;
+}
+
+.changelog-version {
+    border-left: none;
+    margin-bottom: 4rem;
+    padding-left: 3rem;
+    position: relative;
+    background: var(--color-fondo-elevado);
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+    margin-left: 40px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.changelog-version:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.changelog-version:last-child {
+    margin-bottom: 0;
+}
+
+.version-dot {
+    background-color: var(--color-primario);
+    border: 3px solid var(--color-fondo);
+    border-radius: 50%;
+    height: 36px;
+    width: 36px;
+    left: -18px;
+    position: absolute;
+    top: 25px;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 0 4px rgba(var(--color-primario-rgb), 0.3);
+}
+
+.changelog-version:hover .version-dot {
+    transform: scale(1.2);
+    box-shadow: 0 0 0 8px rgba(var(--color-primario-rgb), 0.3);
+}
+
+.version-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--color-borde);
+    padding-bottom: 1rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.version-title {
+    display: flex;
+    align-items: center;
+}
+
+.version-number {
+    color: var(--color-primario);
+    font-size: 1.8rem;
+    margin-right: 1rem;
+    position: relative;
+}
+
+.version-number::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-primario);
+    border-radius: 2px;
+}
+
+.version-date {
+    color: var(--color-texto-claro);
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+}
+
+.version-date i {
+    margin-right: 0.4rem;
+}
+
+.version-type {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.version-badge {
+    background: rgba(var(--color-primario-rgb), 0.1);
+    color: var(--color-primario);
+    border-radius: 20px;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.version-badge i {
+    margin-right: 0.4rem;
+}
+
+.version-emoji {
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(var(--color-primario-rgb), 0.1);
+    border-radius: 50%;
+}
+
+.change-categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.change-category {
+    flex: 1;
+    min-width: 200px;
+    background: var(--color-fondo);
+    border-radius: 8px;
+    padding: 1rem;
+    border-left: 3px solid;
+}
+
+.category-feature {
+    border-color: #4CAF50;
+}
+
+.category-improvement {
+    border-color: #2196F3;
+}
+
+.category-fix {
+    border-color: #FF9800;
+}
+
+.category-security {
+    border-color: #F44336;
+}
+
+.category-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.category-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.7rem;
+    color: white;
+    font-size: 0.8rem;
+}
+
+.category-feature .category-icon {
+    background-color: #4CAF50;
+}
+
+.category-improvement .category-icon {
+    background-color: #2196F3;
+}
+
+.category-fix .category-icon {
+    background-color: #FF9800;
+}
+
+.category-security .category-icon {
+    background-color: #F44336;
+}
+
+.category-title {
+    font-size: 1.1rem;
+    color: var(--color-texto);
+    margin: 0;
+}
+
+.category-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.category-list li {
+    margin-bottom: 0.7rem;
+    position: relative;
+    padding-left: 1.5rem;
+    line-height: 1.5;
+}
+
+.category-list li:last-child {
+    margin-bottom: 0;
+}
+
+.category-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+}
+
+.category-feature .category-list li::before {
+    background-color: #4CAF50;
+}
+
+.category-improvement .category-list li::before {
+    background-color: #2196F3;
+}
+
+.category-fix .category-list li::before {
+    background-color: #FF9800;
+}
+
+.category-security .category-list li::before {
+    background-color: #F44336;
+}
+
+/* Para los cambios más destacados */
+.highlight-tag {
+    display: inline-flex;
+    align-items: center;
+    background: linear-gradient(45deg, var(--color-primario), var(--color-secundario));
+    color: white;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    margin-left: 0.8rem;
+    vertical-align: middle;
+}
+
+.highlight-tag i {
+    margin-right: 0.3rem;
+    font-size: 0.7rem;
+}
+
+/* Estilos para el tema claro (se activan cuando data-tema="claro") */
+html[data-tema="claro"] .changelog-version {
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+}
+
+html[data-tema="claro"] .stat-card,
+html[data-tema="claro"] .version-navigation {
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+}
+
+html[data-tema="claro"] .change-category {
+    background: #f9f9f9;
+}
+
+/* Variables CSS para colores */
+:root {
+    --color-primario-rgb: 103, 58, 183;
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
+    .changelog-timeline::before {
+        left: 15px;
+    }
+    
+    .version-dot {
+        height: 30px;
+        width: 30px;
+        left: -15px;
+        font-size: 0.8rem;
+    }
+    
+    .changelog-version {
+        margin-left: 30px;
+        padding: 1.2rem 1.5rem;
+    }
+    
+    .version-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+    }
+    
+    .version-type {
+        flex-wrap: wrap;
+        gap: 0.6rem;
+    }
+    
+    .change-category {
+        min-width: 100%;
+    }
+    
+    .stat-card {
+        min-width: 140px;
+        padding: 1.2rem;
+    }
+}
