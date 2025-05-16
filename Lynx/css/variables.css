@@ -1,0 +1,54 @@
+:root {
+    --color-primario: #ff006e;
+    --color-primario-oscuro: #c40052;
+    --color-secundario: #ffbe0b;
+    --color-terciario: #3a86ff;
+
+    --color-fondo: #fdfdfd;
+    --color-fondo-alt: #f6f6f6;
+    --color-texto: #1a1a1a;
+    --color-texto-claro: #555555;
+    --color-texto-inverso: #ffffff;
+
+    --color-tarjeta: #ffffff;
+    --color-borde: #e0e0e0;
+    --color-sombra: rgba(255, 0, 110, 0.15);
+
+    --color-exito: #06d6a0;
+    --color-advertencia: #ff9f1c;
+    --color-error: #ef233c;
+
+    --transicion-rapida: 0.2s;
+    --transicion-media: 0.3s;
+    --transicion-lenta: 0.5s;
+}
+
+/* variables para el tema oscuro */
+[data-tema="oscuro"] {
+    --color-primario: #ff3796;
+    --color-primario-oscuro: #ff006e;
+    --color-secundario: #ffd166;
+    --color-terciario: #4cc9f0;
+
+    --color-fondo: #0d0d0d;
+    --color-fondo-alt: #1a1a1a;
+    --color-texto: #fafafa;
+    --color-texto-claro: #cfcfcf;
+    --color-texto-inverso: #0d0d0d;
+
+    --color-tarjeta: #1a1a1a;
+    --color-borde: #333333;
+    --color-sombra: rgba(255, 55, 150, 0.2);
+
+    --color-exito: #38f9d7;
+    --color-advertencia: #f4a261;
+    --color-error: #ff6b6b;
+}
+
+
+/* reseteo de estilos y tipografía base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
